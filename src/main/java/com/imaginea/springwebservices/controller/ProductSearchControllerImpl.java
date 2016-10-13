@@ -1,6 +1,7 @@
 package com.imaginea.springwebservices.controller;
 
 import com.imaginea.springwebservices.beans.Product;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -17,6 +18,7 @@ import java.util.ArrayList;
 public class ProductSearchControllerImpl {
 
     @RequestMapping(method = RequestMethod.GET)
+    @PreAuthorize("hasRole('ROLE_USER')")
     public @ResponseBody ArrayList<Product> getProducts(@RequestParam(value="name", required=false, defaultValue="Stranger") String name){
         Product prod1 = new Product();
         prod1.setDescription("test");
