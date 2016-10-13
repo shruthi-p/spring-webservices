@@ -1,6 +1,5 @@
 package com.imaginea.springwebservices.configuration;
 
-import com.imaginea.springwebservices.controller.ProductSearchControllerImpl;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,7 +11,8 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @SpringBootApplication
 @EnableAutoConfiguration()
-@ComponentScan(basePackageClasses = ProductSearchControllerImpl.class)
+//@ComponentScan(basePackageClasses = ProductSearchControllerImpl.class)
+@ComponentScan(basePackages = "com.imaginea.springwebservices")
 public class ProductSearchConfiguration extends SpringBootServletInitializer {
 
     public static void main(String[] args) {
